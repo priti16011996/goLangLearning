@@ -10,6 +10,8 @@ func main() {
 	fmt.Printf("priti structdetails %v\n", priti)
 	fmt.Printf("priti structdetails %+v\n", priti)
 	fmt.Printf("Name  %v and Designation %v\n", priti.Name, priti.Designation)
+	priti.getName()
+	priti.updateCompanyName("facebook")
 }
 
 type User struct {
@@ -17,4 +19,13 @@ type User struct {
 	Designation string
 	Experiance  int
 	CompanyName string
+}
+
+func (u User) getName() {
+	fmt.Println("Username is:", u.Name)
+}
+
+func (u User) updateCompanyName(newCompanyName string) {
+	u.CompanyName = newCompanyName
+	fmt.Println(u.CompanyName)
 }
